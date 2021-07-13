@@ -63,13 +63,13 @@ def start_checking(num_tries):
             sys.exit(0)
         else:
             # retry
-            print("{} is offline. Waiting 5 seconds to retry...".format(STREAM_URL))
+            print("{} is offline. Waiting 30 seconds to retry...".format(STREAM_URL))
             num_tries -= 1
-            time.sleep(5)
+            time.sleep(30)
     print("Exceeded maximum number of attempts. Exiting...")
     sys.exit(0)
 
 
 if __name__ == "__main__":
     # start infinite loop of checks
-    start_checking(1000)
+    start_checking(10000)
