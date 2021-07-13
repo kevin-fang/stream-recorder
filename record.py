@@ -15,7 +15,7 @@ ffmpeg_path = "ffmpeg"
 
 SAVE_PATH = os.path.join(RECORDINGS_FOLDER, NAME)
 if not os.path.exists(SAVE_PATH):
-    os.mkdir(SAVE_PATH)
+    os.makedirs(SAVE_PATH)
 
 
 def ffmpeg_copy_and_fix_errors(recorded_filename, processed_filename):
@@ -70,5 +70,6 @@ def start_checking(num_tries):
     sys.exit(0)
 
 
-# start infinite loop of checks
-start_checking(1000)
+if __name__ == "__main__":
+    # start infinite loop of checks
+    start_checking(1000)
